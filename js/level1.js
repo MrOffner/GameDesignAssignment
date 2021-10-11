@@ -10,6 +10,7 @@ var level1State = {
 		// Sound creation
 
 		// Background creation
+		game.add.image(0,0,'background');
 
 		// Level creation
 
