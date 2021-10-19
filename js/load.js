@@ -15,6 +15,9 @@ var loadState = {
 		game.load.setPreloadSprite(loadBar);
 
 		/* Load all the sprites */
+		game.load.image('wheat', 'assets/sprites/wheat.png');
+		game.load.image('water', 'assets/sprites/water.png');
+		game.load.image('emu', 'assets/sprites/emu.png');
 
 		/* Load all the spritesheets */
 		game.load.spritesheet('button', 'assets/sprites/button_blank.png', 190, 49);	// Frame 0 = up, Frame 1 = down
