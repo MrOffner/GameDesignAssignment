@@ -10,11 +10,23 @@ var level1State = {
 		// Sound creation
 
 		// Background creation
-		game.add.image(0,0,'background');
 
 		// Level creation
 
 		// Player creation
+		player = game.add.sprite (game.world.centerX, game.world.centerY, 'emu');
+		game.physics.arcade.enable(player);
+		player.anchor.setTo(0.5);
+		player.health = 100;
+		player.hunger = 10;
+		player.speed = 150;
+
+		playerControls =  {
+			up: game.input.keyboard.addKey(Phaser.KeyCode.W),
+			down: game.input.keyboard.addKey(Phaser.KeyCode.S),
+			left: game.input.keyboard.addKey(Phaser.KeyCode.A),
+			right: game.input.keyboard.addKey(Phaser.KeyCode.D),
+		};
 
 		// Other creation
 
@@ -27,6 +39,22 @@ var level1State = {
 		/* Collision and overlap checks */
 
 		/* Player input and movement */
+		if(playerControls.up.isDown){
+			player.body.velocity.y = -player.speed;
+		} else if(playerControls.down.isDown){
+			player.body.velocity.y = player.speed;
+		}
+		else {
+			player.body.velocity.y = 0;
+		}
+		if(playerControls.left.isDown){
+			player.body.velocity.x = -player.speed;
+		} else if(playerControls.right.isDown){
+			player.body.velocity.x = player.speed;
+		} else {
+			player.body.velocity.x = 0;
+		}
+
 
 		/* Other actions */
 
